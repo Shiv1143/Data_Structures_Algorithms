@@ -1,0 +1,25 @@
+Second Largest String
+
+def getSecondOrderElements(n: int,  a: [int]) -> [int]:
+    # Write your code here.
+    if n == 0 or n == 1:
+        print(-1, -1)
+    ans = []
+    max = float('-inf')
+    min = float('inf')
+    for i in range(n):
+        if a[i] < min:
+            min = a[i]
+        elif a[i] > max:
+            max = a[i]
+
+    second_max = float('-inf')
+    second_min = float('inf')
+    for i in range(n):
+        if a[i] < second_min and a[i]!=min:
+            second_min = a[i]
+        if a[i] > second_max and a[i]!=max:
+            second_max = a[i]
+    ans.append(second_max)
+    ans.append(second_min)
+    return ans
