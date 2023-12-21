@@ -1,0 +1,19 @@
+
+Question 6:
+-----------
+
+** Linear Search **
+
+Solution:
+---------
+
+def linearSearch(n: int, num: int, arr: [int]) -> int:
+    # Write your code here.
+    k = 0
+    for i in range(n):
+        if num == arr[i]:
+            k += 1
+            return i
+    if k == 0:
+        return -1
+---------------------------------------------------------------

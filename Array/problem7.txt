@@ -1,0 +1,20 @@
+
+Question 7:
+-----------
+
+** Merge two sorted Array **
+-----------------------------
+
+Solution:
+---------
+def sortedArray(a: [int], b: [int]) -> [int]:
+    # Write your code here
+    if len(a) < len(b):
+        for i in range(len(a)):
+            b.append(a[i])
+        return sorted(list(set(b)))
+    else:
+        for i in range(len(b)):
+            a.append(b[i])
+        return sorted(list(set(a)))
+------------------------------------------------------
