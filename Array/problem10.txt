@@ -1,0 +1,28 @@
+
+Question 10.
+------------
+
+Longest Subarray with sum k
+-----------------------------
+
+Solution:
+---------
+
+def longestSubarrayWithSumK(a: [int], k: int) -> int:
+    # Write your code here
+    dic = {}
+    max_len = 0
+    sum = 0
+    
+    for i in range(len(a)):
+        sum += a[i]
+        if sum == k:
+            max_len = max(max_len, i+1)
+        if (sum - k) in dic:
+            max_len = max(max_len, i - dic[sum-k])
+        if sum not in dic:
+            dic[sum] = i
+    return max_len
+
+-------------------------------------------------------------------------------
+
